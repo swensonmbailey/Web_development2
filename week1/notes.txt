@@ -1,0 +1,45 @@
+What I learned from the reading:
+    when retreiving input always use .value
+    when displaying output always use the .innterHTML
+
+    local storage is pretty easy to use in javascript:
+        in order to save a variable to the local storage use localStorage.setItem(key, value)
+        local storage stores items in key value pairs, similar to a dictory/js object;
+        in order to retrieve an item from the local storage use localStorage.getItem(key);
+        ....
+        local storage is also  an associative array:
+            instead of using the function getItem, I can simply use localStorage[key]
+            instead of using the function setItem I can simply use localStorage[key] = value
+            
+            Because local storage is an associative array a key can only hold one value:
+                The way arround this is to use Json which can convert (stringify) arrays and javascript objects in or a single string.
+                In order to use the storaged array/object you must first parse (split up the one string).
+Questions: 
+    Can I do the same thing with these associative properities where instead of typing the string I send a varable that has the key as a value?
+    What other things can be stringified into Json?
+    Can localStorage store images, mp3, or video? Is it just text?
+            
+
+What I learned form the videos:
+    Mobile first
+        Start small and scale up!
+            Start building for mobile and then upscale for larger screens.
+    
+    Master mobile UX:
+        Speed is key. Your UI should allow people to find/do the important things quick. If it takes too long they might leave the site.
+        Place is also important when talking about mobile UI:
+            People use smartphones one handed, so things should be easily reached when using a phone one handed.
+            
+        Make your website faster:
+            minify css and js files
+            use smaller image formats
+
+        Make your website simple:
+            simple is leads to more conversions
+Questions:
+    What about left handed people? Do we design with the majority in mind alone?
+    How do I minify css and js files? Is there a quick and easy way to do it?
+    I was always under the impression that for an image to look good it had to be a bigger file. How are websites suppose to mantain image quality by using smaller file formats?
+
+
+            
