@@ -2,6 +2,10 @@ const links = [
     {
         label: "Week2 notes",
         url: "notes.txt"
+    },
+    {
+        label: "Chapter 2 Exercise",
+        url: "chapter2exercise.html"
     }
 ]
 var theList = "";

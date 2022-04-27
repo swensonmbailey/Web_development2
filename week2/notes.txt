@@ -1,0 +1,123 @@
+Comments
+    "Well-commented code is the hallmark of a ninja programmer"
+    
+    Questions
+        Are comments a make or break when you are working as a programmer?
+
+JavaScript Grammar
+    JS has a C-style syntax.
+    each js statement either ends with a new line or a semicolon.
+        Best practice is to write each statement on a new line and end it with a semi-colon.
+    
+Variables
+    const - is used when the variable name will not be reassigned a value for the reminder of the program
+
+    Question:
+        Is it now bad practice to use var to declare variables?
+
+Scope
+    Global Scope: 
+        any variable declared outside of a block.
+        it is accessible everywhere in the program
+        it is not considered good practice
+    Local Scope:
+        variables declared within a block (with let or const)
+        Using let or const to declare variables will ensure they are block scoped
+
+    Question:
+        The chapter made it seem like you could create a variable inside a block without declaring it first using let or const, and that it would be acessable outside the block.
+        Is this okay to do?
+
+
+    Strings
+        dot notaion for length and string methods
+
+        Template Literals
+            can contain both sets of quotation marks and also contain js code.
+            uses `` to make a template Literal
+    
+Type Coercion
+    Type coercion happens when the operands of an operator are of different types (a string and a number)
+    type coercion isn't always consistent, so best to not rely on it and manually change the type of a variable if needed
+
+Converting Strings to Numbers
+    best practice is to use the Number(string);
+
+Coverting number to Strings
+    String(number); or number.toString();
+
+parseInt()
+    doesn't round up, just cuts off the decimal
+parseFloat()
+    coverts string to float number
+
+Question:
+    Do I always have to parse input from the user or is that a way to retrieve data that is already in number form?
+
+Use hard equality and hard inequality
+
+Question:
+    Is there ever a moment where I should use soft equality over hard equality or should I always stick with hard?
+
+Arrays
+    You can use index notation to add an item to any index you want, even if the array isn't that long yet. Doing so will make the array that long and add the item in that index. 
+    The array will be filled with empty (undefined) slots.
+
+    The delete operator removes the value of the specified item and replaces it with undefined
+
+    array properties and methods:
+        .pop(), .push()
+        .shift(), .unshift()
+        .concat()
+        spread - [...[], ...[]]
+        .join()
+        .slice() - undestructive
+        .splice() - removes and replaces
+            if zero items are removed then nothing is removed only add at the chosen index
+        .reverse();
+        .sort() - sorts array alphabetically
+        .indexOf()
+            -1 means the item isn't there
+        .includes()
+
+sets
+    const numbers = new Set();
+    const numbers = new Set([data, data, data]);
+    data in sets can't be duplicated
+    .add(data)
+    .size()
+    .has(data)
+    no index notation
+    .delete()
+    .clear()
+    convert to array
+        use spread (...) operator inside of array literal
+        or Array.from(set)
+    new WeakSet() - for non-primitive data types
+
+Maps
+    can use any data type as a key
+    = new Map();
+    .set(key, value)
+    .get(key)
+    .has(key)
+    .size - property
+    .delete(key)
+    .clear()
+    = new WeakMap() - the keys can't be primitive data types
+
+
+
+Question:
+    Are literal declarations for non-primitive data types only useful for being a quicker way to declare the data type?
+    Are there other advantages?
+
+    Should I try to use Weak sets and maps more that the normal ones?
+
+Logic
+Ternay Operator
+    condition ? (code if true) : (code if false)
+
+    
+
+
