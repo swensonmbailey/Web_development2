@@ -118,6 +118,24 @@ Logic
 Ternay Operator
     condition ? (code if true) : (code if false)
 
+DRY - Don't Repeat Yourself
+    the same code shouldn't be repeat in a program over and over.
+    functions can be useful in fixing this problem with repeating code.
+
+Arguements
+    "If too many arguments are provided when a function is invoked, the function will work as normal and the extra arguments will be ignored (although they can be accessed using the arguments object)"
+        "Every function has a special variable called arguments. This is an array-like object that contains every argument passed to the function when it is invoked."
+    " default parameters - use default values for any parameter that isn't provided as an argument."
+
+Default parameters
+    default parameters can be set so as to have a go to value in case no value is sent in the arguments when the function is invoked.
+        "To specify a default parameter, simply assign the default value to it in the function definition"
     
+The main difference between function expressions and function literals is how they are hoisted. 
+    Function literals are hoisted completely
+    function experssions aren't hoisted completely
+Question:
+    Why is there this difference? Does it affect performance? Why not hoist both the same?
+
 
 
