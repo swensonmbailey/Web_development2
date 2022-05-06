@@ -60,8 +60,6 @@ document.
     .childNodes - be catuious because this will return all nodes including whitespace.
     .children - a better property to use becuase it won't return nodes of whitespace.
 
-    Question: is .classList the only way to add a class to an element without overwriting the previous class?
-
     .classList.add() .classList.remove() .classList.toggle() .classList.contains()
 
 
