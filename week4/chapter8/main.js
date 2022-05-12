@@ -16,6 +16,7 @@ function makeHero(event){
 
     hero.category = form.category.value;
     hero.age = form.age.value;
+    hero.city = form.city.value;
     
     alert(JSON.stringify(hero));
     return hero;
