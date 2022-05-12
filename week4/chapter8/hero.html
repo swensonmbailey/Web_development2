@@ -7,8 +7,7 @@
 <body>
     <form id='hero'>
         <label for='heroName'>Name:
-            <input type='text' id='heroName' name='heroName' autofocus placeholder='Your Super Hero Name' maxlength=32>
-        </label>
+            <input type='text' id='heroName' name='heroName' autofocus placeholder='Your Super Hero Name' maxlength=32 required>        </label>
         <label for='realName'>Real Name:
         <input type='password' name='realName' id='realName'></label>
         <br><label for='age'>Age:
@@ -51,6 +50,13 @@
             </select>
         </label>
         <br>
+        <label for="origin">Origin Story:
+            <textarea id="origin"   name="origin"   rows="20"   cols="60"></textarea>
+        </label>
+
+
+        <br>
+        <button type='reset'>Reset</button>
         <button type='submit'>Submit</button>
     </form>
 <script src='main.js'></script>
