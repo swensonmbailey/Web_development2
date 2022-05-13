@@ -1,0 +1,109 @@
+Object-oriented programming in JavaScript
+    Three main concepts of OOP
+        encapsulation
+            "involves keeping all the programming logic inside an object and making methods available to implement the functionality, without the outside world needing to know how it’s done."
+        polymorphism
+            "this means various objects can share the same method, but also have the ability to override shared methods with a more specific implementation."
+
+        inheritance
+            "this means we can take an object that already exists and inherit all its properties and methods. We can then improve on its functionality by adding new properties and methods."
+The easiest way to create a new object is to use the literal syntax.
+
+Constructor Functions
+    "a function that defines the properties and methods of an object"
+
+With ES6 we know can use class declarations which do the same thing as a constructor funciton.   
+Example of a class declaration:
+class Dice {
+    constructor(sides=6) {
+        this.sides = sides;
+    }
+
+    roll() {
+        return Math.floor(this.sides * Math.random() + 1)
+    }
+}
+
+"By convention, the names of constructor functions or class declarations are capitalized"
+Also class declarations are more preferable.
+
+Static methods
+    "A static method is called by the class directly rather than by instances of the class."
+
+Question: When would I need to find out the prototype of an object? Wouldn't I already know it or have access to the class declaration? I'm not sure when this would ever need to be used in the sense that the book is explaining.
+
+The protoype is live meaning that if the prototype is changed in some way it will update all of its current and future instances.
+
+Using getter and setter methods
+    "This is something you may want to avoid if your objects are public facing ― giving users or external services too much access to properties and methods could be a recipe for disaster!"
+    Getter and setter methods are used to access private variables. Private variables are used to avoid giving users access to change certain variables.
+Question: what is the criteria for using making variables private? Should I lean towards making private and only public when needed?
+
+"A class can inherit from another class using the extends keyword in a class declaration."
+example:
+class NinjaTurtle extends Turtle {
+    constructor(name) {
+        super(name);
+        this.weapon = 'hands';
+    }
+}
+
+Objects can be used to create other objects
+eamples:
+const lois = Object.create(Human);
+
+    "The instanceof operator will not work when objects have been created this way. It only works when using constructor functions to create objects."
+
+Mixins
+   "A mixin is a way of adding properties and methods of some objects to another object without using inheritance. It allows more complex objects to be created by ‘mixing’ basic objects together."
+   example:
+    Object.assign(a,b);
+        This takes all of the properties of b and assigns them to a.
+            The only issue is that this method only makes shallow copies of arrays and objects. This can cause issues.
+                To fix this issue, one needs to create their own mixin methods
+                example:
+                function mixin(target,...objects) {
+                    for (const object of objects) {   
+                    if(typeof object === 'object') {
+                        for (const key of Object.keys(object)) {
+                            if (typeof object[key] === 'object') {
+                            target[key] = Array.isArray(object[key]) ? [] : {};
+                            mixin(target[key],object[key]);
+                            } else {
+                            Object.assign(target,object);  
+                            }
+                        }
+                        }
+                    }
+                    return target;
+                }
+    Mixins can be used to make factory fuctions and add modular functionality.
+
+    Chaining Functions
+        use "return this;" to be able to chain methods. This allows you to call multiple methods all at once.
+    using this in nested fuctions can cause problems. 
+        ways to by pass those problems
+            bind()
+            use for-of loops
+            use arrow functions
+    
+    Borrowing is a way to use properties from one object on another without inheritance:
+        To borrow use call()
+        "The call() method takes the object that the function is to be applied to as its first argument, then the usual arguments come afterwards."
+
+    Composition Over Inheritance
+    "This approach advocates creating small objects that describe single tasks or behaviors and using them as the building blocks for more complex objects"
+
+    Modular JavaScript
+        "A module is a self-contained piece of code that provides functions and methods that can then be used in other files and by other modules. This helps to keep code organized in separate, reusable files, which improves code maintainability."
+
+    When using modules remember:
+        All code in modules is always in strict mode without the need for 'use strict' and there is no way to opt out of this.
+        A module has its own global scope, so any variables created in the top-level of a module can only be accessed within that module.
+        The value of this in the top level of a module is undefined, rather than the global object.
+
+        Use "export" to signify what should be exported from the module when called.
+        "import" is then need in the file you wish to import the content to.
+    
+    Question: If I export a default variable, function, or class can I also export a non-default one from the modular or would that cause an error?
+    

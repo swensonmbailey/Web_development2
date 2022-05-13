@@ -10,6 +10,10 @@ const links = [
     {
         label: "Chapter 8 hero",
         url: "chapter8/hero.html"
+    },
+    {
+        label: "notes",
+        url: "notes.txt"
     }
     
 ]
