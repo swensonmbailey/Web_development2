@@ -1,8 +1,16 @@
 const links = [
     {
-        label: "Week3 notes",
-        url: "notes.txt"
+        label: "Quiz Ninja Project",
+        url: "quizninja/index.html"
     },
+    {
+        label: "Chapter 8 Search",
+        url: "search.html"
+    },
+    {
+        label: "Chapter 8 hero",
+        url: "chapter8/hero.html"
+    }
     
 ]
 var theList = "";
