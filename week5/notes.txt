@@ -1,0 +1,39 @@
+Exceptions - " an error that produces a return value that can then be used by the program to deal with the error."
+Stack Traces - "a sequence of functions or method calls that lead to the point where the error occurred"
+Warning - "can occur if there’s an error in the code that isn't enough to cause the program to crash"
+    Warnings aren't okay. They can cause other problems.
+
+During development the code should fail "loudly" so that any problems can be fixed.
+In production the code should fail quiter so as to not have the user experience affected. However, the code should fail silently.
+
+Strict mode is encouraged because it will tend to threw more exceptions and warnings, which mean that errors are more likely to be caught and fixed.
+    To use strict mode you simply need to place the string 'use strict' on the first line of a JavaScript file.
+    Strict mode can be call on specific functions by placing the 'use strict'; at the top of the function(s).
+
+Linting Tools
+    JS Lint, JS Hint, and ES Lint
+    "can be used to test the quality of JavaScript code"
+        "designed to highlight any sloppy programming practices or syntax errors, and will complain if certain style conventions are not followed"
+    Can be helpfull when working as a team
+
+Feature Detection
+    "The recommended way to determine browser support for a feature"
+    "Done by using an if statement to check whether an object or method exists before tyring to call / use it"
+    example:
+        if (window.holoDeck) {
+            virtualReality.activate();
+        }
+    
+Debugging
+    Breakpoints
+        alert() "stops a program from running until OK is clicked"
+    Console
+        console.log() - doesn't stop the code, but still allows you to see the value of variables as certain parts of the code.
+
+    Modern Browser debugging Tools
+        keyword debugger
+            "This will create a breakpoint in your code that will pause the execution of the code and allow you to see where the program is currently up to"
+            "The program can then be restarted by clicking on the 'play' button."
+
+Error Objects
+    
