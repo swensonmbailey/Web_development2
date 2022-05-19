@@ -36,4 +36,23 @@ Debugging
             "The program can then be restarted by clicking on the 'play' button."
 
 Error Objects
-    
+    example:
+        const error = new Error('Oops, something went wrong');
+    other types of error Objects
+        RangeError
+        ReferenceError
+        SyntaxError
+        TypeError
+        URIError
+        InternalError
+
+Throwing Exceptions
+    You can cause the program to throw an exception with the keyword throw
+    It is best practice to throw an error object.
+
+Catching exceptions and errors
+    "If we suspect a piece of code will result in an exception, we can wrap it in a try block."
+    "This will run the code inside the block as normal, but if an exception occurs it will pass the error object that is thrown onto a catch block"
+    finally
+        the finally block is always ran, no matter which of the try or cathch blocks ended up running.
+        
