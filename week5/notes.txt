@@ -55,4 +55,16 @@ Catching exceptions and errors
     "This will run the code inside the block as normal, but if an exception occurs it will pass the error object that is thrown onto a catch block"
     finally
         the finally block is always ran, no matter which of the try or cathch blocks ended up running.
-        
+
+Tests
+    "a function that tests a piece of code runs as it should"
+    
+    Test-driven development
+        "the process of writing tests before any actual code"
+        These tests will initially fail. The code is then added and then edited as needed. The tests made at the begining are used to make sure the code is always running as needed.
+        also know as red-green-refactor
+
+Testing Frameworks
+    Jest
+        a framework that can be downloaded and used to test your code without you having to write our test functions
+    
