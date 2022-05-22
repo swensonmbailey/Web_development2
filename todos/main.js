@@ -1,26 +1,34 @@
-class Todo {
-    constructor(id, content, completed=false){
-        this.id = id;
-        this.content = content;
-        this.completed = completed;
-    }
-}
+import * as todos from "./todos.js";
+import * as ls from "./ls.js";
+import * as util from "./utilities.js";
+
 
 let todos;
 
-function onLoad(){
-    if (localStorage.getItem("todos")){
-        todos = JSON.parse(localStorage.getItem("todos"));
-    }else{
-        todos = [];
-    }
 
-}
 
-function updateList(){
-    let todoContainer = document.getElementById("todoContainer");
+// class Todo {
+//     constructor(id, content, completed=false){
+//         this.id = id;
+//         this.content = content;
+//         this.completed = completed;
+//     }
+// }
 
-    for(let i = 0; i > todos.length; i++){
-        todoContainer.
-    }
-}
+
+// function onLoad(){
+//     if (localStorage.getItem("todos")){
+//         todos = JSON.parse(localStorage.getItem("todos"));
+//     }else{
+//         todos = [];
+//     }
+
+// }
+
+// function updateList(){
+//     let todoContainer = document.getElementById("todoContainer");
+
+//     for(let i = 0; i > todos.length; i++){
+//         todoContainer;
+//     }
+// }
