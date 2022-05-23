@@ -1,5 +1,5 @@
 import * as main from "./main.js";
-import * as todos from "./todos.js";
+import * as t from "./todos.js";
 
 export function onLoad(){
     let list;
@@ -9,5 +9,9 @@ export function onLoad(){
         list = [];
     }
     main.setTodosList(list);
-    todos.updateListContainer(todos);
+    t.updateListContainer(todos);
+}
+
+export function saveTodos(todoslist){
+    localStorage.setItem("todos", JSON.stringify(main.getTodosList()));
 }

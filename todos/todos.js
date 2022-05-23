@@ -2,7 +2,7 @@ import * as util from "./utilities.js";
 import * as main from "./main.js";
 
 //class used to make todo objects that will appear in the list
-class Todo {
+export default class Todo {
     constructor(id, content, completed=false){
         this.id = id;
         this.content = content;
@@ -36,14 +36,14 @@ function createTodoDiv(todoObject){
     let checkbox = document.createElement("input");
     checkbox.type = "checkbox";
     checkbox.checked = todoObject.completed;
-    util.addListener(checkbox, 'change', updateCompleted); //adds an eventlistner to the checkbox
+    util.addListener(checkbox, 'change', updateCompleted, true); //adds an eventlistner to the checkbox
     //creates p element for the content
     let p = document.createElement('p');
     p.innerHTML = todoObject.content;
     //creates X span for task removal 
     let x = document.createElement('span');
     x.innerHTML = "X";
-    util.addListener(x, 'click', removeTask); //adds an eventlistner to the X span;
+    util.addListener(x, 'click', removeTask, true); //adds an eventlistner to the X span;
 
 
     item.appendChild(checkbox);
@@ -63,7 +63,3 @@ export function removeTask(task){
 
 }
 
-//adds a new todo object to the todos array
-export function addTodoTask(){
-    main.getTodosList();
-}
