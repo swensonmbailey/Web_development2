@@ -1,0 +1,34 @@
+
+#todoContainer{
+    display: flex;
+    flex-direction: row;
+}
+
+.completed{
+    color: red;
+}
+
+.todoTask {
+    /* display: grid;
+    grid-template-columns: .25fr 1fr .25;
+    grid-template-rows: 25px;
+    grid-gap: 5px; */
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+/* .checkbox{
+    grid-row: 1 span 1;
+    grid-column: 1 span 1; 
+    
+}
+.taskContent{
+    grid-row: 1 span 1;
+    grid-column: 2 span 1; 
+    margin: 0px 10px;
+    display: inline;
+}
+.deleteTask{
+    grid-row: 1 span 1;
+    grid-column: 3 span 1; 
+} */

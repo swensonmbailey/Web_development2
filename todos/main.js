@@ -3,13 +3,14 @@ import * as ls from "./ls.js";
 import * as util from "./utilities.js";
 
 
-let todos;
-util.addListener(document.body, "load", ls.onLoad);
+let todos = [];
+// body.addEventListener("load", ls.onLoad, false)
+util.addListener(window, "DOMContentLoaded", ls.onLoad);
 util.addListener(document.getElementById("showAll"), "click", util.showAll);
 util.addListener(document.getElementById("showActive"), "click", util.showActive);
 util.addListener(document.getElementById("showCompleted"), "click", util.showCompleted);
 util.addListener(document.getElementById("addTodo"), "click", util.addTodoTask);
-
+console.log("in main have event listeners")
 
 
 
