@@ -1,4 +1,7 @@
 
+body{
+    background-color: pink;
+}
 #todoContainer{
     display: flex;
     flex-direction: row;
@@ -9,15 +12,15 @@
 }
 
 .todoTask {
-    /* display: grid;
-    grid-template-columns: .25fr 1fr .25;
+    display: grid;
     grid-template-rows: 25px;
-    grid-gap: 5px; */
-    display: flex;
+    grid-template-columns: .25fr 1fr .25fr;
+    grid-gap: 5px;
+    /* display: flex;
     flex-direction: column;
-    flex-wrap: nowrap;
+    flex-wrap: nowrap; */
 }
-/* .checkbox{
+.checkbox{
     grid-row: 1 span 1;
     grid-column: 1 span 1; 
     
@@ -26,9 +29,10 @@
     grid-row: 1 span 1;
     grid-column: 2 span 1; 
     margin: 0px 10px;
-    display: inline;
+    /* display: inline; */
 }
 .deleteTask{
     grid-row: 1 span 1;
     grid-column: 3 span 1; 
-} */
+    cursor: pointer;
+}

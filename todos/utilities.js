@@ -2,7 +2,6 @@ import Todo, * as t from "./todos.js";
 import { getTodosList, setTodosList } from "./main.js";
 
 
-const date = new Date();
 
 //adds eventlistener to an element
 //called in todos.js
@@ -30,17 +29,19 @@ export function showAll() {
 export function showActive() {
     console.log("inside showActive()");
     let list = getTodosList();
-    t.updateListContainer(list.filter(function (a) {
+    let active = list.filter(function (a) {
         return a.completed === false;
-    }));
+    });
+    t.updateListContainer(active);
 }
 
 export function showCompleted() {
     console.log("inside showCompleted()");
     let list = getTodosList();
-    t.updateListContainer(list.filter(function (a) {
+    let completed = list.filter(function (a) {
         return a.completed === true;
-    }));
+    });
+    t.updateListContainer(completed);
 }
 
 //adds a new todo object to the todos array call update
@@ -50,8 +51,8 @@ export function addTodoTask() {
     let content = document.getElementById("todoContent").value;
     if (content.length) {
         //create the object
-        console.log(date.getTime());
-        const todo = new Todo(date.getTime().toString(), content);
+        
+        const todo = new Todo(t.makeTaskId(), content);
 
         todos.push(todo);
         setTodosList(todos);
