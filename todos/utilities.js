@@ -1,5 +1,5 @@
 import Todo, * as t from "./todos.js";
-import { getTodosList, setTodosList } from "./main.js";
+import { getTodosList, setTodosList, getDisplayWhich, setDisplayWhich } from "./main.js";
 
 
 
@@ -23,7 +23,8 @@ export function toggleclass(element, classToggled) {
 
 export function showAll() {
     console.log("inside showAll()");
-    t.updateListContainer(getTodosList());
+    // t.updateListContainer(getTodosList());
+    return showCompleted().concat(showActive());
 }
 
 export function showActive() {
@@ -32,7 +33,8 @@ export function showActive() {
     let active = list.filter(function (a) {
         return a.completed === false;
     });
-    t.updateListContainer(active);
+    // t.updateListContainer(active);
+    return active;
 }
 
 export function showCompleted() {
@@ -41,7 +43,8 @@ export function showCompleted() {
     let completed = list.filter(function (a) {
         return a.completed === true;
     });
-    t.updateListContainer(completed);
+    // t.updateListContainer(completed);
+    return completed;
 }
 
 //adds a new todo object to the todos array call update
@@ -49,6 +52,7 @@ export function addTodoTask() {
     console.log("inside addTodoTask()");
     let todos = getTodosList();
     let content = document.getElementById("todoContent").value;
+    
     if (content.length) {
         //create the object
         
@@ -58,7 +62,8 @@ export function addTodoTask() {
         setTodosList(todos);
         t.updateListContainer(todos);
     }
-
+    
+    document.getElementById("todoContent").value = ""; //reset the input box
 }
 
 //removes a task from the todos array
@@ -82,4 +87,24 @@ export function findTaskIndex(Id, list){
         }
     }
     return null;
+}
+
+//displayCurrent is used to display the correct kind of todo objects on the screen at the moment
+export function displayCurrent(){
+    let current = getDisplayWhich();
+    
+    if(current === "all"){
+        t.updateListContainer(showAll());
+    }
+    if(current === "active"){
+        t.updateListContainer(showActive());
+    }
+    if(current === "completed"){
+        t.updateListContainer(showCompleted());
+    }
+}
+
+export function displayButtonClick(element){
+    setDisplayWhich(element.id);
+    displayCurrent();
 }

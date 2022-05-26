@@ -137,6 +137,7 @@ export function updateCompleted(task){
 
     util.toggleclass(parent, "completed");
     main.setTodosList(list);
+    util.displayCurrent();
 }
 
 export function makeTaskId(){
