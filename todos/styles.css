@@ -47,10 +47,7 @@ h1{
     display: grid;
     grid-template-rows: 25px;
     grid-template-columns: 10% 80% 10%;
-    /* grid-gap: 5px; */
-    /* display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap; */
+   
 }
 .checkbox{
     grid-row: 1 span 1;
@@ -65,8 +62,7 @@ h1{
     grid-column: 2 span 1;
     margin: auto 0px;
     text-align: left;
-    /* margin: 0px 10px; */
-    /* display: inline; */
+   
 }
 .deleteTask{
     grid-row: 1 span 1;
