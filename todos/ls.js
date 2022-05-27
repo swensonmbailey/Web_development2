@@ -5,7 +5,7 @@ export function onLoad(){
     
     let list;
     if (localStorage.getItem("todos")){
-        console.log("todos exists in local storage")
+        
         list =  JSON.parse(localStorage.getItem("todos"));
     }else{
         

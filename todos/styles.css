@@ -35,6 +35,7 @@ h1{
 #list div{
     border: black solid 1px;
     height: 5vh;
+    
 }
 
 .completed p{
@@ -55,7 +56,7 @@ h1{
     grid-row: 1 span 1;
     grid-column: 1 span 1; 
     transform: scale(2);
-    margin: auto;
+    margin: 8px auto;
     
     
 }

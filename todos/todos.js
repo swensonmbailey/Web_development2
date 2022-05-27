@@ -30,9 +30,9 @@ export function updateListContainer(taskList){
             
         }
     }else{
-        console.log("no tasks so no elements needed")
+       
         //if empty show message
-        todoContainer.innerHTML = "Add a todo item to start your list.";
+        todoContainer.innerHTML = "<div>Add a todo item to start your list.</div>";
     }
 
 }
@@ -57,7 +57,7 @@ function createTodoDiv(todoObject){
     item.id = todoObject.id;
 
 
-   =
+   
     return item;          
 }
 
@@ -94,7 +94,7 @@ export function logCompleted(element){
     let list = main.getTodosList();
     let parent = element.parentElement;
     let parentId = util.findTaskIndex(parent.id, list);
-   =
+   
 }
 
 
@@ -129,6 +129,6 @@ export function makeTaskId(){
     id += date.getMinutes();
     id += date.getSeconds();
     id += date.getMilliseconds();
-    console.log(id);
+    
     return id;
 }

@@ -6,7 +6,7 @@ import { getTodosList, setTodosList, getDisplayWhich, setDisplayWhich } from "./
 //adds eventlistener to an element
 //called in todos.js
 export function addListener(object, type, callBack, passObject = false) {
-    console.log("inside addListener()")
+    
     if (passObject) {
         object.addEventListener(type, (object) => callBack(object.target), false);
     } else {

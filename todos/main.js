@@ -19,7 +19,7 @@ document.getElementById("todoContent").addEventListener("keypress", function(eve
         event.preventDefault();
     }
 });
-console.log("in main have event listeners")
+
 
 
 
