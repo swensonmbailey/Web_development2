@@ -1,38 +1,111 @@
 
 body{
     background-color: pink;
+    max-width: 100vw;
 }
-#todoContainer{
-    display: flex;
-    flex-direction: row;
+#contents{
+    width: 80vw;
+    min-height: 70vh;
+    margin: auto;
+}
+#list{
+    width: 80vw;
+    min-height: 50vh;
+    margin: auto;
+    background-color: aqua;
+    box-shadow: 2px 2px #888888;
 }
 
-.completed{
+h1{
+    text-align: center;
+    font-size: 60px;
+    margin: 10px;
+    
+}
+
+
+
+/* Below styles the container of the todo div objects and the todo div objects */
+#todoContainer{
+    display: flex;
+    flex-direction: column;
+    min-height: 50vh;
+}
+
+#list div{
+    border: black solid 1px;
+    height: 5vh;
+}
+
+.completed p{
     color: red;
+    text-decoration: line-through;
 }
 
 .todoTask {
     display: grid;
     grid-template-rows: 25px;
-    grid-template-columns: .25fr 1fr .25fr;
-    grid-gap: 5px;
+    grid-template-columns: 10% 80% 10%;
+    /* grid-gap: 5px; */
     /* display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: nowrap; */
 }
 .checkbox{
     grid-row: 1 span 1;
     grid-column: 1 span 1; 
+    transform: scale(2);
+    margin: auto;
+    
     
 }
 .taskContent{
     grid-row: 1 span 1;
-    grid-column: 2 span 1; 
-    margin: 0px 10px;
+    grid-column: 2 span 1;
+    margin: auto 0px;
+    text-align: left;
+    /* margin: 0px 10px; */
     /* display: inline; */
 }
 .deleteTask{
     grid-row: 1 span 1;
     grid-column: 3 span 1; 
     cursor: pointer;
+    margin: auto;
+}
+
+/* below styles the buttons */
+#actions{
+    display: grid;
+    grid-template-columns: 40% 20% 20% 20%;
+}
+#listCount{
+    grid-row: 1 span 1;
+    grid-column: 1 span 1;
+    margin: auto 5px;
+}
+#all{
+    grid-row: 1 span 1;
+    grid-column: 2 span 1;
+}
+#active{
+    grid-row: 1 span 1;
+    grid-column: 3 span 1;
+}
+#completed{
+    grid-row: 1 span 1;
+    grid-column: 4 span 1;
+}
+
+/* styles the input */
+form{
+    margin-top: 20vh;
+    
+}
+form input{
+    font-size: 20px;
+    width: 70vw;
+}
+#addTodo{
+    font-size: 20px;
 }

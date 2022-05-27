@@ -22,34 +22,41 @@ export function toggleclass(element, classToggled) {
 }
 
 export function showAll() {
-    console.log("inside showAll()");
-    // t.updateListContainer(getTodosList());
-    return showCompleted().concat(showActive());
+   
+
+    let completed = showCompleted()
+    let active = showActive()
+
+    displayListCount({completed, active});
+
+    return completed.concat(active);
 }
 
 export function showActive() {
-    console.log("inside showActive()");
+ 
     let list = getTodosList();
     let active = list.filter(function (a) {
         return a.completed === false;
     });
-    // t.updateListContainer(active);
+ 
+    displayListCount({active});
     return active;
 }
 
 export function showCompleted() {
-    console.log("inside showCompleted()");
+   
     let list = getTodosList();
     let completed = list.filter(function (a) {
         return a.completed === true;
     });
-    // t.updateListContainer(completed);
+   
+    displayListCount({completed});
     return completed;
 }
 
 //adds a new todo object to the todos array call update
 export function addTodoTask() {
-    console.log("inside addTodoTask()");
+   
     let todos = getTodosList();
     let content = document.getElementById("todoContent").value;
     
@@ -60,7 +67,8 @@ export function addTodoTask() {
 
         todos.push(todo);
         setTodosList(todos);
-        t.updateListContainer(todos);
+       
+        displayCurrent();
     }
     
     document.getElementById("todoContent").value = ""; //reset the input box
@@ -75,7 +83,8 @@ export function removeTask(task){
     
     list.splice(index,1);
     setTodosList(list);
-    t.updateListContainer(list);
+    
+    displayCurrent();
 }
 
 //return the index of a task that can be used to later maniuplate the corrent task
@@ -107,4 +116,17 @@ export function displayCurrent(){
 export function displayButtonClick(element){
     setDisplayWhich(element.id);
     displayCurrent();
+}
+
+
+//makes the list count appear in the #listCount element 
+export function displayListCount(lists){
+    let listCount = document.getElementById("listCount");
+    listCount.innerHTML = "";
+    if(lists.completed){
+        listCount.innerHTML += `Completed: ${lists.completed.length} `;
+    }
+    if(lists.active){
+        listCount.innerHTML += `Active: ${lists.active.length}`;
+    }
 }
