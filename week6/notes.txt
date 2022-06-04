@@ -1,0 +1,130 @@
+Functions
+    Functions are first-class objects
+        They can have properties and methods
+
+Function properties
+    .length - returns the number of parameters the function has
+
+Function methods
+    call() - can be used to set the value of this inside a function to an object that is provided as the first argument.
+    example:
+        function sayHello(){
+            return `Hello, my name is ${ this.name }`;
+        }
+
+        const clark = { name: 'Clark' };
+
+        sayHello.call(clark);
+        << 'Hello, my name is Clarke'
+
+
+You can give functions custom properties.
+
+Immediately Invoked Function Expressions - called as soon as it's defined
+    to do so just add () right after the expression.
+        a fucntion expressions is a functio that is defined within ()
+
+    uses of IIFEs
+        Temporary Variables
+        Initialization Code
+        Safe Use of Strict Mode
+        Creating Self-contained Code Blocks
+
+Question: The reading made it sound like IIFEs were pretty handy. Do you find yourself using them often?
+
+
+Functions that Define and Rewrite Themselves
+    This is done by assigning an anonymous function to a variable that has the same name as the function.
+        example:
+            function party(){
+                console.log('Wow this is amazing!');
+                party = function(){
+                    console.log('Been there, got the T-Shirt');
+                }
+            }
+
+Recursive Functions
+    A recursive function is one that invokes itself until a certain condition is met
+Question: Do you have any good sources to further study recursion?
+
+Promises
+    - represents the future result of an asynchronous operation
+    The Promise Life Cycle
+        pending, unsettled, settled (Resolved or Rejected)
+    Creating A Promise
+        const promise = new Promise( (resolve, reject) => {
+            // initialization code goes here
+            if (success) {
+                resolve(value);
+            } else {
+                reject(error);
+            }
+        });
+
+Async Functions
+    - preceded by the async keyword and allow you to write asynchronous code as if it was synchronous.
+
+functions can return other functions
+    To make use of the function that is returned, we need to assign it to a variable
+
+Closure
+    A closure is a reference to a variable that was created inside the scope of another function, but is then kept alive and used in another part of the program.
+    One of the key principles in creating closures is that an 'inner' function, which is declared inside another function, has full access to all of the variables declared inside the scope of the function in which it’s declared (the 'outer' function)
+    A closure is formed when the inner function is returned by the outer function, maintaining access to any variables declared inside the enclosing function.
+    We can now assign a variable to the return value of the outer() function
+
+Generators
+    special functions used to produce iterators that maintain the state of a value
+    To define a generator function, an asterisk symbol (*) is placed after the function declaration
+
+Question: It talked about pure functions. Can you create a program only using pure functions? I don't think so. I couldn't have created my todos program with only pure functions.
+
+
+Ajax
+
+The living standard for requesting and receiving data is the Fetch Api
+Fetch API 
+    fetch()
+        has one mandatory argument
+            the URL of the resource you wish to fetch
+
+    response, requests, and headers objects can all be created to help with ajax requests and responses.
+    Response Interface
+        example:
+            "const url = 'https:example.com/data';
+
+            fetch(url)
+            .then((response) => {
+                if(response.ok) {
+                    return response;
+                }
+                throw Error(response.statusText);
+            })
+            .then( response => // do something with response )
+            .catch( error => console.log('There was an error!') )"
+
+    Request Interface
+
+        Verbs used in requests
+            GET, POST, PUT, PATCH, DELETE
+
+            Requests can retrieve data using a GET request, or send data using a POST request.
+            
+
+        example:
+            const request = new Request('https://example.com/data', {
+                method: 'GET',
+                mode: 'cors',
+                redirect: 'follow',
+                cache: 'no-cache'
+            });
+            fetch(request)
+            .then( // do something with the response )
+            .catch( // handle any errors)
+
+    headers
+        The Headers interface allows you to create HTTP headers that can be added to a request or response object.
+
+
+Question: Do you have any good sources to further study Ajax?
+
