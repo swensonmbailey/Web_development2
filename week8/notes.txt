@@ -1,0 +1,39 @@
+Canvas API
+    "we can draw anything we can imagine, all through JavaScript"
+    "we can draw shapes and lines, arcs and text, gradients and patterns"
+    "canvas gives us the power to manipulate pixels in images and even video"
+    
+    Canvas element
+        <canvas></canvas>
+            if text is place inside the tags it will only show if the canvas element isn't supported
+            as any html element <canvas> can have id and class attributes
+            also one must always add the width and height attributes for a <canvas> in the html and not in the class
+
+            After creating the <canvas> element it has no styling. You can use css to had a border
+
+    Drawing on the Canvas
+        "All drawing on the canvas happens via the Canvas JavaScript API"
+
+        In JavaScript call ".getContext("2d")" on the canvas element in order to set up the canvas's context.
+
+        Filling Our Brush with Color
+            to draw you must set either a strokeStyle or fillStyle color or both.
+                example:
+                    context.strokeStyle = "red";
+            Drawing a Rectangle to the Canvas
+                fillRect() and strokeRect()
+                    both take (x,y, width, height)
+        
+        fillStyle()
+            we can use a color, a CanvasPattern, or a CanvasGradient
+
+    Drawing Other Shapes by Creating Paths
+        "we can draw any shape we can imagine!"
+        " however, there’s no built-in method for drawing circles or other shapes. To draw more interesting shapes, we must first lay out the path of the shape."
+
+        Paths
+            "create a blueprint for your lines, arcs, and shapes"
+            "paths are invisible until you give them a stroke"
+
+            start a path with "context.beginPath();"
+        
