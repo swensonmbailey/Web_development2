@@ -36,4 +36,15 @@ Canvas API
             "paths are invisible until you give them a stroke"
 
             start a path with "context.beginPath();"
+            after starting/begining a path you have to close it when you are done drawing
+                context.closePath();
+        
+        arc
+           .arc(x, y, radius, startAngle, endAngle, anticlockwise)
+                x&y are the cordinates of the center of the arc/circles
+                startAngle and endAngle are the portion of the circumference that you want to appear
+                    for a full circle startAngle = 0 and endAngle = 2PI
+            after setting the arc we can then style it by adding strokeStyle, fillStyle, etc.
+    
+    Drawing an Image to the Canvas
         
