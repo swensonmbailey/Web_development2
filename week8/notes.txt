@@ -47,4 +47,58 @@ Canvas API
             after setting the arc we can then style it by adding strokeStyle, fillStyle, etc.
     
     Drawing an Image to the Canvas
-        
+        create an <img> element in the html
+        create a JavaScript variable for the image element
+        pass the image to the context of the canvas
+            example:
+                "context.drawImage(image, 0, 0);"
+
+        "Once we’ve drawn an image on the canvas, we can use the getImageData method from the Canvas API to manipulate the pixels of that image"
+            "getImageData will return an ImageData object, which contains three properties: width, height, and data. "
+                "data contains information about the pixels in the ImageData object in the form of an array. Each pixel on the canvas will have four values in the data array, which correspond to that pixel’s R, G, B, and A values"
+
+    Manipulating Video with Canvas
+
+    SVG
+        "Unlike canvas, images created with SVG are available via the DOM. This enables technologies such as screen readers to see what’s present in an SVG object through its DOM node, as well as allowing you to inspect SVG using your browser’s developer tools. Since SVG is an XML file format, it’s also more accessible to search engines than canvas."
+
+Question: In your experience which have you seen more on websites, SVG or Canvas?
+Question: which do you find to be easier, SVG or Canvas?
+    I think SVG might be easier. I learned about it this semester in another class.
+
+
+Canvas versus SVG
+    Canvas allows for pixel manipulation. One downside of canvas is that it operates in what’s known as immediate mode.
+    canvas is much faster than SVG 
+    what you draw to SVG is accessible via the DOM, because its mode is retained mode
+    SVG also has a more complete set of tools
+    you can’t manipulate SVG images the way you can manipulate pixels on canvas
+
+Drag and Drop
+     two major kinds of functionality
+        -dragging files from your computer into a web page
+        -dragging elements into other elements on the same page
+    
+    steps to adding drag and drop to a page
+        Set the draggable attribute on any HTML elements you’d like to be draggable.
+             add the draggable attribute to them, and set the value to true
+
+        Add an event listener for the dragstart event on any draggable HTML elements.
+            The DataTransfer Object (used inside the "dragstart" event listener)
+                lets us define the type of data we want to save from the dragged element and the value of the data                
+                example: 
+                    event.dataTransfer.setData("text/plain", this.id); 
+
+        Add an event listener for the dragover and drop events on any elements that you want to have accept dropped items.
+            prevent the default behavior for both these events
+            can use the data that was retrieved from the dragstart event listener
+                example:
+                    event.originalEvent.dataTransfer.getData("text/plain");
+
+Question: The reading didn't talk about draging and dropping files. Is that similar what I learned above or is that different?
+Question: What would be a real world application dragging and dropping onscreen content to another part of the screen?
+
+This week my notes focused on things that I didn't alreay know. 
+    This semester in my Advanced CSS class I have already recently learned about Transformations, transitions, and animations.
+Question: I know there are JavaScript libraries that you can use to make css animations. Have you used these? Do you prefer scripting animations in CSS or using a JavaScript library?
+
