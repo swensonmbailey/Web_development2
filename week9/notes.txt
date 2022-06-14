@@ -1,0 +1,108 @@
+The Window Object
+
+The Browser Object Model
+    "a collection of properties and methods that contain information about the browser and computer screen"
+
+Going Global
+    "Global variables are actual properties of a global object"
+        example: the global variable "x= 6" is the same as "window.x = 6"
+
+    The functions  "parseInt() and isNaN(), are actually methods of the global object"
+        can be called as "window.parseInt(4.2)"
+    
+    The dialog functions " alert(), confirm() and prompt()" are also all window object methods
+        Question: Do you find yourself every really using these dialog functions in a program? Do you opt for creating your own kind of dialog popup as to not result to pausing the program until they respond?
+
+Browser Information
+    "The window object has a number of properties and methods that provide information about the user’s browser"
+    Browser
+        The  navigator property of the window object is an object that contains info about the browser being used.
+             "Its userAgent property will return information about the browser and operating system"
+    Location
+        window.location
+            "object that contains information about the URL of the current page"
+            So web location not acutal location
+            window.location.href
+                example: window.location.href returns the current page's full URL
+                on the other hand assigning a value to "window.location.href" will cause the browser to redirect to the new url assigned.
+            window.location.protocol
+                returns a string describing the protocol used
+                i.e. http, https, pop2, ftp
+            window.location.host
+                returns a string describing the domin of the current Url & port number
+            window.location.hostname
+                returns a string describing the domain
+            window.location.port
+                returns a string with the port number
+            window.location.search
+                returns a string with the current page's query string parameters
+    Browser History
+        window.history
+            "used to access information about any previously visited pages in the current browser session"
+            window.history.length
+                "how many pages have been visited before arriving at the current page"
+            window.history.go()
+                "used to go to a specific page" in the brower's current history
+    Controlling Windows
+        window.open() 
+            used to open a new browser window
+                parameters - the new window's url, the window's title, and a list of attributes
+        window.close()
+            can be used to close a window
+        winodw.moveTo()
+            takes two paramenters, an x and y coordiante, in order to move a window to that spot on the screen.
+        window.resizeTo()
+            used to resize a window. takes a width and a height
+        Question: The reading says it isn't common to use these methods. Also popups aren't great. Have you used these methods a number of times, and if so for what purpose?
+    Screen Information
+        window.screen
+            contains information about the screen the browser is displayed on"
+            window.screen.height
+            window.screen.width
+                info of the whole screen
+            window.screen.availWidth
+            window.screen.availHeight
+                info of the available screen (excluding the operating system menus)
+        On mobile
+            window.screen can " turn off the device’s screen, detect a change in its orientation or lock it in a specific orientation."
+        
+    The Document Object
+        "This object has properties and methods that deal with the page that has been loaded into the window"
+        document.write()
+            heavily frowned upon to use commonly
+    
+    Cookies
+        "small files that are saved locally on a user’s computer"
+        "used for personalizing a user’s browsing experience, storing user preferences, keeping track of user choices (such as a shopping cart), authentication and tracking users"
+
+        creating Cookies
+            example: document.cookie = 'name=Superman';
+              "Assigning another cookie to it won’t overwrite the entire property, it will just append it to the end of the string. So we can add more cookies by assigning them to document.cookie"
+        changing cookie values
+            "can be changed by reassigning it to document.cookie using the same name but a different value"
+                example:    document.cookie = 'name=Batman'
+        reading cookies
+            document.cookie returns a string of all the current cookies for they current domain
+                then use .split() to retrieve the data from the string
+        Cookie Expiry Dates
+            "Cookies are session cookies by default"
+                "they are deleted when the user closes the browser tab or window"
+            to create a persistent cookie
+                add "; expires=date" to the end of its declaration
+                    the date must be in the UTC String Format
+                or set the "; max-age=seconds" value
+        Deleting Cookies
+            "set it to expire at a time in the past"
+Question: Are cookies secure? Can you put user login info into a cookie and trust it's safety?
+
+
+    Timeing functions
+        window.setTimeout()
+            used to schedule the execution of a function
+            accepts a callback as the first parameter and a number of milliseconds at its second
+        window.setInterval()
+            "similar to setTimeout() but it will repeadtedly invoke the callback functions after a give number of milliseconds"
+        
+        Animation
+            can use setInterval() or even better window.requestAnimationFrame() to animate things on your page
+        Question: So CSS seems way easier than this to make an animation. Do you agree?
