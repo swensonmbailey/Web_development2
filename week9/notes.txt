@@ -106,3 +106,49 @@ Question: Are cookies secure? Can you put user login info into a cookie and trus
         Animation
             can use setInterval() or even better window.requestAnimationFrame() to animate things on your page
         Question: So CSS seems way easier than this to make an animation. Do you agree?
+
+HTML5
+    data-
+        "The data- attribute is a way of embedding data in a web page using custom attributes that are ignored by the browser."
+        "their sole purpose is to be used by a JavaScript program"
+            "program utilizes it to access information about a particular element on the page"
+
+        type "data-" followed by "only lowercase letters, numbers, hyphens, dots, colons or underscores"
+            can include a string value
+                example: data-powers = 'flight superSpeed'
+
+        "Each element has a dataset property that can be used to access any data- attributes it contains"
+            example: const powers = superman.dataset.powers;
+                     << 'flight superSpeed'
+    
+    question: To me it seems that the data- attribute is bascially adding a JS Key-value list directly into the html. Would that be an accurate comparison?
+              What is the use in adding an empty data- attribute? Could I not just use a class for that?
+
+    HTML5 APIs
+        HTML5 Web Storage
+            "provides a key-value store on the client’s computer that is similar to using cookies but has fewer restrictions, more storage capacity"
+            "There is no actual limit in the specification, but most browsers have a limit set at 5GB per domain"
+            "Any data stored does not automatically expire as it does with cookies"
+            "There is also a sessionStorage object that works in the same way, although the data is only saved for the current session"
+        
+        Geolocation
+            "used to obtain the geographical position of the device"
+            used to find the user’s exact location or speed and direction of travel
+            "Because of privacy concerns, permission to use this has to be granted by the user first."
+            geolocation is available, through the navigator object
+                use getCurrentPosition()
+                    example: navigator.geolocation.getCurrentPosition(youAreHere);
+                    the position will be returned to the callback function sent when calling getCurrentPosition()
+                        
+                        returns a position object
+                            the positions object the following properties:
+                                position.coords - an object with latitude and longitude properties
+                                position.speed
+                                position.altitude
+                                position.heading
+                                position.timestamp
+                                position.accuracy
+                                position.altitudeAccuracy
+
+            geolocation.watchPosition(callback) - "will call a callback function every time the position of the device is updated"
+            
