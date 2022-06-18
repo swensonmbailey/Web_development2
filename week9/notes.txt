@@ -130,6 +130,7 @@ HTML5
             "There is no actual limit in the specification, but most browsers have a limit set at 5GB per domain"
             "Any data stored does not automatically expire as it does with cookies"
             "There is also a sessionStorage object that works in the same way, although the data is only saved for the current session"
+    Question: Why would I use cookies with I can use localStorage?
         
         Geolocation
             "used to obtain the geographical position of the device"
@@ -151,4 +152,19 @@ HTML5
                                 position.altitudeAccuracy
 
             geolocation.watchPosition(callback) - "will call a callback function every time the position of the device is updated"
-            
+
+        Websockets
+            "a new protocol that allows two-way communication with a server – also known as push messaging"
+            " a connection is kept open and responses are ‘pushed’ to the client as soon as they are received"
+        
+        Multimedia
+            <audio src="">
+            <video src="" controls>
+                .play()
+                .pause()
+                .volume = value;
+                .video.muted = true;
+                .video.currentTime += 10;
+                video.playbackRate
+                video.loop
+                video.duration
