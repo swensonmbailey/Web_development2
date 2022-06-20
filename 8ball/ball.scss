@@ -1,0 +1,73 @@
+@use './colorsFonts.scss' as variables;
+
+@mixin flexCentered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin makeDivCircle($color, $width) {
+    background-color: $color;
+    width: $width;
+    height: $width;
+    border-radius: 100%;
+}
+
+@mixin setAnimationMovements($distance){
+    @keyframes animateBall {
+        0% {
+            transform: translate(-$distance, 0%);
+            // transform: translate(-20px, 0px);
+        }
+    
+        25% {
+            transform: translate(0%, 0%);
+        }
+    
+        50% {
+            transform: translate(-1 * $distance, $distance);
+            // transform: translate(20px, 20px);
+        }
+        75% {
+            transform: translate(0%, $distance);
+            // transform: translate(0%, 20px);
+        }
+    
+        100% {
+            transform: translate(0%, 0%);
+        }
+    }
+}
+
+
+@mixin ballAnimaation($distance, $duration){
+    @include setAnimationMovements($distance);
+    animation: animateBall 3s $duration alternate forwards;
+}
+
+@mixin completedBall($Outerdistance, $repeat){
+    #ball{
+        @include flexCentered;
+    
+        #outerCircle {
+            @include makeDivCircle(variables.$darkest, 250px);
+            @include flexCentered;
+            @include ballAnimaation($Outerdistance, $repeat);
+    
+    
+            #innerCircle {
+                @include makeDivCircle(variables.$white, 150px);
+                @include flexCentered;
+                font-family: variables.$ball-font;
+                font-size: 5rem;
+    
+                @include ballAnimaation($Outerdistance - 5%, $repeat);
+    
+                #answer{
+                    @include ballAnimaation($Outerdistance - 5%, $repeat);
+                }
+            }
+        }
+    }
+
+}
