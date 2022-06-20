@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Joan&family=Kdam+Thmor+Pro&family=Raleway:wght@200&display=swap");
+@keyframes animateBall {
+  0% {
+    transform: translate(-20%, 0%);
+  }
+  25% {
+    transform: translate(0%, 0%);
+  }
+  50% {
+    transform: translate(20%, 20%);
+  }
+  75% {
+    transform: translate(0%, 20%);
+  }
+  100% {
+    transform: translate(0%, 0%);
+  }
+}
+#ball {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#ball #outerCircle {
+  background-color: #110f0f;
+  width: 250px;
+  height: 250px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: animateBall 2s infinite alternate forwards;
+}
+#ball #outerCircle #innerCircle {
+  background-color: #ffffff;
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Kdam Thmor Pro";
+  font-size: 5rem;
+  animation: animateBall 2s infinite alternate forwards;
+}
+#ball #outerCircle #innerCircle #answer {
+  animation: animateBall 2s infinite alternate forwards;
+}
+
+/*# sourceMappingURL=styles.css.map */
