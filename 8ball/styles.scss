@@ -1,6 +1,11 @@
 @use './colorsFonts.scss' as variables;
 @use './ball.scss' as ball;
-
+@use './designs.scss' as designs;
 
 
 @include ball.completedBall(20%, 3);
+
+@include designs.menuStyles;
+
+
+

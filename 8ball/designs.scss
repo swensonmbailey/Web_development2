@@ -1,0 +1,19 @@
+@use './colorsFonts.scss' as variables;
+
+@mixin menuStyles {
+    #menu{
+        display: flex;
+        justify-content: flex-end;
+    
+        div{
+            border: 2px solid variables.$dark;
+            font-family: variables.$answer-font;
+            color: variables.$dark;
+            font-size: 2em;
+            padding: 5px;
+            cursor: pointer;
+
+           
+        }
+    }
+}
