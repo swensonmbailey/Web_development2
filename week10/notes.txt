@@ -1,0 +1,43 @@
+client-side form validation
+    "ensuring all required form controls are filled out, in the correct format before submitting date to the sever"
+    "If the information is correctly formatted, the application allows the data to be submitted to the server"
+    "if the information isn't correctly formatted, it gives the user an error message explaining what needs to be corrected, and lets them try again"
+
+The three main reasons for validating our forms:
+    "We want to get the right data, in the right format"
+        so that our applications work correctly
+    "We want to protect our users' data"
+        example: requiring (through validation) more secure passwords
+    "We want to protect ourselves"
+        "malicious users can misuse unprotected forms to damage the application"
+        hackers
+    
+two different types of client-side validation
+    "Built-in form validation"
+        "HTML5 form validation feature"
+            "better performance than JavaScript but not as customizable"
+             
+    "JavaScript"
+        "This validation is completely customizable"
+    
+Using built-in form validation
+    features include:
+        required - "a form field needs to be filled in before the form can be submitted"
+        minlength and maxlength - sets the min/max length of text data
+        min and max - sets the min/max vales of number data
+        type - specifies the type (number, email, etc.) of data
+        pattern - sets the regular expression that data must follow.
+    
+    CSS psuedoclasses
+        :valid - when a form element with data is valid
+        :invalid - when an element is invalid
+        :required - when an element has the required attribute
+        etc.
+
+    Validating against a regular expression
+        pattern attribute
+            "expects a Regular Expression as its value"
+                "regular expression (regex) is a pattern that can be used to match character combinations in text strings"
+        
+
+    Constraining the length of your entries
