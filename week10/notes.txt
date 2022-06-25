@@ -11,6 +11,8 @@ The three main reasons for validating our forms:
     "We want to protect ourselves"
         "malicious users can misuse unprotected forms to damage the application"
         hackers
+    Question: Isn't it true that the best security practice would be to validate on the front in and on the server-side?
+
     
 two different types of client-side validation
     "Built-in form validation"
@@ -19,6 +21,8 @@ two different types of client-side validation
              
     "JavaScript"
         "This validation is completely customizable"
+
+    Question: which have you seen used more often?
     
 Using built-in form validation
     features include:
@@ -33,6 +37,7 @@ Using built-in form validation
         :invalid - when an element is invalid
         :required - when an element has the required attribute
         etc.
+    
 
     Validating against a regular expression
         pattern attribute
@@ -41,3 +46,88 @@ Using built-in form validation
         
 
     Constraining the length of your entries
+        minlength and maxlength
+            used on <input> and <textarea>
+
+
+Validating forms using JavaScript
+    The Constraint Validation API
+        "consists of a set of methods and properties"
+        available for the following:
+            HTMLButtonElement
+            HTMLFieldSetElement
+            HTMLInputElement
+            HTMLOutputElement
+            HTMLSelectElement
+            HTMLTextAreaElement
+                through the constraint validation API the following properties are available
+                    validationMessage - "Returns a localized message describing the validation constraints that the control doesn't satisfy (if any)"
+                    validity - "Returns a ValidityState object that contains several properties describing the validity state of the element"
+                        a few of the more common of these are:
+                            patternMismatch - "Returns true if the value does not match the specified pattern"
+                            tooLong - "Returns true if the value is longer than the maximum length specified by the maxlength attribute"
+                            tooShort - true if value is shorter than the minlength
+                            rangeOverflow - true if the value is greater than max
+                            rangeUnderflow - true if the value is less than min
+                            typeMismatch - true if the value is not the right syntax
+                            valid - true data meets all the constraints
+                            valueMissing - true if element is required and has no value
+                            willValidate - true element can be validated through the constraint api
+    
+    Implementing a customized error message
+
+    novalidate - turns off the browser's automatic validation
+        "lets our script take control over validation. However, this doesn't disable support for the constraint validation API nor the application of CSS pseudo-classes"
+
+Using the Fetch API
+    "The Fetch API provides a JavaScript interface for accessing and manipulating parts of the HTTP pipeline"
+        "such as requests and responses"
+
+    fetch differs from jQuery.ajax() in the following ways:
+        "he Promise returned from fetch() won't reject on HTTP error status even if the response is an HTTP 404 or 500"
+            "it will only reject on network failure or if anything prevented the request from completing."
+        unless called with credentials option set to include fetch() won't:
+            send cookies in cross-origin request
+            won't set any cookies sent back in cross-origin respones
+    
+    Question: Is jQuery.ajax more simple than fetch() or is it just personal preference?
+
+    Simple fecth example:
+        "fetch('http://example.com/movies.json')
+            .then(response => response.json())
+            .then(data => console.log(data));"
+
+    The fetch() will return "a promise that resolves with a Response object"
+    "The Response object does not directly contain the actual JSON response"
+        "to extract the JSON body from the Response object use json() methods"
+    Question: This is why there are two .then() methods correct? Both are required to put out the JSON response, right?
+    
+    "The fetch() method can optionally accept a second parameter, an init object that allows you to control a number of different settings"
+
+    sending a request with credentials included
+        "to send a request with credentials included on both same-origin and cross-origin calls, add credentials: 'include' to the init object you pass"
+
+        example:"fetch('https://example.com', {
+                    credentials: 'include'
+                });"
+
+        "If you only want to send credentials if the request URL is on the same origin as the calling script, add credentials: 'same-origin'."
+        credentials: 'omit' - ensures credentials aren't included
+
+    Uploading JSON data
+        Use fetch() to POST JSON-encoded data."
+        example: fetch('https://example.com/profile', {
+                        method: 'POST', // or 'PUT'
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                            body: JSON.stringify(data),
+                    })
+    
+    Uploading a file
+        "Files can be uploaded using an HTML <input type="file" /> input element, FormData() and fetch()."
+
+    Supplying your own request object
+        "Instead of passing a path to the resource you want to request... you can create a request object using the Request() constructor, and pass that"
+
+    Question: is this preference as well or is better to create and pass a request object?
