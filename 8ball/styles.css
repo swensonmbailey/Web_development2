@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Joan&family=Kdam+Thmor+Pro&family=Raleway:wght@200&display=swap");
+:root {
+  --repetition: 3;
+}
+
 #ball {
   display: flex;
   justify-content: center;
@@ -12,14 +16,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: animateBall 3s 3 alternate forwards;
+  animation: animateBall 3s var(--repetition) alternate forwards;
 }
 @keyframes animateBall {
   0% {
-    transform: translate(-20%, 0%);
+    transform: translate(0%, 0%);
   }
   25% {
-    transform: translate(0%, 0%);
+    transform: translate(-20%, 0%);
   }
   50% {
     transform: translate(-20%, 20%);
@@ -41,14 +45,14 @@
   align-items: center;
   font-family: "Kdam Thmor Pro";
   font-size: 5rem;
-  animation: animateBall 3s 3 alternate forwards;
+  animation: animateBall 3s var(--repetition) alternate forwards;
 }
 @keyframes animateBall {
   0% {
-    transform: translate(-15%, 0%);
+    transform: translate(0%, 0%);
   }
   25% {
-    transform: translate(0%, 0%);
+    transform: translate(-15%, 0%);
   }
   50% {
     transform: translate(-15%, 15%);
@@ -61,14 +65,14 @@
   }
 }
 #ball #outerCircle #innerCircle #answer {
-  animation: animateBall 3s 3 alternate forwards;
+  animation: animateBall 3s var(--repetition) alternate forwards;
 }
 @keyframes animateBall {
   0% {
-    transform: translate(-15%, 0%);
+    transform: translate(0%, 0%);
   }
   25% {
-    transform: translate(0%, 0%);
+    transform: translate(-15%, 0%);
   }
   50% {
     transform: translate(-15%, 15%);
@@ -79,6 +83,48 @@
   100% {
     transform: translate(0%, 0%);
   }
+}
+
+#pageContents {
+  display: flex;
+  flex-direction: column;
+}
+#pageContents #ball {
+  margin: 10vh 0vh;
+}
+#pageContents form {
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto;
+}
+#pageContents form div {
+  grid-column: 1/span 2;
+  grid-row: 1/span 1;
+  font-size: 4vh;
+}
+#pageContents form div #question {
+  font-size: 4vh;
+}
+@media screen and (min-width: 500px) {
+  #pageContents form div {
+    font-size: 2rem;
+  }
+  #pageContents form div #question {
+    font-size: 2rem;
+  }
+}
+@media screen and (min-width: 700px) {
+  #pageContents form div {
+    font-size: 3rem;
+  }
+  #pageContents form div #question {
+    font-size: 3rem;
+  }
+}
+#pageContents form button {
+  grid-column: 2/span 1;
+  grid-row: 2/span 1;
 }
 
 #menu {

@@ -16,12 +16,16 @@
 @mixin setAnimationMovements($distance){
     @keyframes animateBall {
         0% {
-            transform: translate(-$distance, 0%);
+            transform: translate(0%, 0%);
             // transform: translate(-20px, 0px);
         }
+        // 10%{
+        //     transform: translate(-$distance, 0%);
+        //     // transform: translate(-20px, 0px);
+        // }
     
         25% {
-            transform: translate(0%, 0%);
+            transform: translate(-$distance, 0%);
         }
     
         50% {
