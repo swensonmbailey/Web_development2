@@ -101,10 +101,14 @@
 #pageContents form div {
   grid-column: 1/span 2;
   grid-row: 1/span 1;
-  font-size: 4vh;
+  font-size: 3vh;
+  margin-bottom: 10px;
 }
 #pageContents form div #question {
-  font-size: 4vh;
+  font-size: 3vh;
+  border-width: 0px 0px 1px 0px;
+  outline: none;
+  font-family: "Joan";
 }
 @media screen and (min-width: 500px) {
   #pageContents form div {
@@ -122,9 +126,19 @@
     font-size: 3rem;
   }
 }
-#pageContents form button {
+#pageContents form #ask {
   grid-column: 2/span 1;
   grid-row: 2/span 1;
+  font-family: "Raleway";
+  font-size: 1rem;
+}
+@media screen and (min-width: 700px) {
+  #pageContents form #ask {
+    font-size: 2rem;
+  }
+  #pageContents form #ask #question {
+    font-size: 2rem;
+  }
 }
 
 #menu {
@@ -132,12 +146,22 @@
   justify-content: flex-end;
 }
 #menu div {
-  border: 2px solid #4e3429;
+  border: 1px solid #4e3429;
   font-family: "Raleway";
   color: #4e3429;
-  font-size: 2em;
+  font-size: 3vh;
   padding: 5px;
   cursor: pointer;
+  margin: 2px;
+}
+@media screen and (min-width: 700px) {
+  #menu div {
+    font-size: 2rem;
+  }
+}
+#menu div:hover {
+  border-color: #d9d6ff;
+  color: #838ecd;
 }
 
 /*# sourceMappingURL=styles.css.map */

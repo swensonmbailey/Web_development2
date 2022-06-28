@@ -7,6 +7,8 @@
     --repetition: 3;
 }
 
+//homepage
+
 @include ball.completedBall(20%, var(--repetition));
 
 #pageContents{
@@ -25,9 +27,14 @@
         div{
             grid-column: 1 / span 2;
             grid-row: 1 / span 1;
-            font-size: 4vh;
+            font-size: 3vh;
+            margin-bottom: 10px;
             #question{
-                font-size: 4vh;
+                font-size: 3vh;
+                border-width: 0px 0px 1px 0px;
+                outline: none;
+                font-family: variables.$question-font;
+               
             }
 
             @media screen and (min-width: 500px) {
@@ -46,9 +53,19 @@
     
             }
         }
-        button{
+        #ask{
             grid-column: 2 / span 1;
             grid-row: 2 / span 1;
+            font-family: variables.$answer-font;
+            font-size: 1rem;
+
+            @media screen and (min-width: 700px) {
+                font-size: 2rem;
+                #question{
+                    font-size: 2rem;
+                }
+    
+            }
         }
 
     }
@@ -60,16 +77,30 @@
     justify-content: flex-end;
 
     div{
-        border: 2px solid variables.$dark;
+        border: 1px solid variables.$dark;
+
         font-family: variables.$answer-font;
         color: variables.$dark;
-        font-size: 2em;
+        font-size: 3vh;
         padding: 5px;
         cursor: pointer;
+        margin: 2px;
+
+
+        @media screen and (min-width: 700px) {
+            font-size: 2rem;
+
+        }
 
        
     }
+
+    div:hover{
+        border-color: variables.$coolest;
+        color: variables.$cool;
+    }
 }
+
 
 
 
