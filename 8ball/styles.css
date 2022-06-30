@@ -1,6 +1,66 @@
 @import url("https://fonts.googleapis.com/css2?family=Joan&family=Kdam+Thmor+Pro&family=Raleway:wght@200&display=swap");
+#loginContainer {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 95vw;
+  height: 95vh;
+  margin: 0px;
+  z-index: 2;
+  backdrop-filter: blur(5px);
+}
+
+#loginContents {
+  border: 2px solid #110f0f;
+  background-color: #d9d6ff;
+  width: 60vw;
+  height: 60vh;
+  padding: 10px;
+  flex-direction: column;
+  z-index: 2;
+  display: flex;
+}
+@media screen and (min-width: 900px) {
+  #loginContents {
+    width: 30vw;
+    height: 60vh;
+  }
+}
+
+.center {
+  margin: auto;
+}
+
 :root {
   --repetition: 3;
+}
+
+#loginContents {
+  margin: auto;
+  border: 2px solid #110f0f;
+  background-color: #d9d6ff;
+  width: 60vw;
+  height: 60vh;
+  padding: 10px;
+  flex-direction: column;
+  z-index: 2;
+  position: fixed;
+  top: 20vh;
+  left: 20vw;
+  display: none;
+}
+@media screen and (min-width: 900px) {
+  #loginContents {
+    width: 30vw;
+    height: 60vh;
+    position: fixed;
+    top: 20vh;
+    left: 35vw;
+  }
+}
+
+.center {
+  margin: auto;
 }
 
 #ball {

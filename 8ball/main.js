@@ -5,3 +5,8 @@
 
 // }, false);
 
+document.getElementById('login').addEventListener('click', (e)=>{
+    document.getElementById("loginContents").style.display = "flex";
+    document.getElementById("pageContents").style.display = "none";
+
+}, false);

@@ -1,11 +1,17 @@
 @use './colorsFonts.scss' as variables;
 @use './ball.scss' as ball;
 @use './designs.scss' as designs;
+@use './loginStyle.scss' as login;
 
 
 :root{
     --repetition: 3;
 }
+
+//login
+@include login.style();
+
+
 
 //homepage
 
@@ -20,6 +26,7 @@
     }
 
     form{
+        
         margin: auto;
         display: grid;
         grid-template-columns: 1fr auto;
