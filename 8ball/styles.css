@@ -59,8 +59,43 @@
   }
 }
 
+#back {
+  border: 1px solid #4e3429;
+  font-family: "Raleway";
+  color: #4e3429;
+  font-size: 3vh;
+  padding: 5px;
+  cursor: pointer;
+  margin: 2px;
+  text-align: center;
+}
+@media screen and (min-width: 700px) {
+  #back {
+    font-size: 2rem;
+  }
+}
+
+#back:hover {
+  border-color: #d9d6ff;
+  color: #838ecd;
+}
+
+#createAcc {
+  cursor: pointer;
+  color: #838ecd;
+}
+
+#createAcc:hover {
+  border: 0px solid #4e3429;
+  border-bottom-width: 1px;
+}
+
 .center {
   margin: auto;
+}
+
+#createAccDiv {
+  display: none;
 }
 
 #ball {
