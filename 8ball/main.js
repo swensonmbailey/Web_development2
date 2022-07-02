@@ -1,24 +1,33 @@
-// document.getElementById('ask').addEventListener('click', (e)=>{
-//     e.preventDefault();
-//     let r = document.querySelector(':root');
-//     r.style.setProperty('--repetition', 'infinite');
+import * as popup from "./popup.js";
 
-// }, false);
+//will help know what popup window is to be displayed
+//if isLogin is true then it's the login popup, if false then it's createAcc
+export let isLogin = true;
 
 document.getElementById('login').addEventListener('click', (e)=>{
-    document.getElementById("loginContents").style.display = "flex";
-    document.getElementById("pageContents").style.display = "none";
-
+    console.log("event");
+    popup.loginClick();
 }, false);
 
 document.getElementById('back').addEventListener('click', (e)=>{
-    document.getElementById("loginContents").style.display = "none";
-    document.getElementById("pageContents").style.display = "flex";
+    isLogin = true;
+    popup.exitPopup();
 
 }, false);
 
 document.getElementById('createAcc').addEventListener('click', (e)=>{
-    document.getElementById("createAccDiv").style.display = "block";
-    document.getElementById("loginH1").innerHTML = "8-Ball Create Account"
-    document.getElementById("loginP").innerHTML = "Have an account? <br> <span id='createAcc'>Sign in</span>"
+    console.log('createAcc click');  
+    popup.toggleCreateAcc();
 }, false);
+
+export function getLogin() {
+    return isLogin;
+}
+export function setLogin(){
+    if(isLogin === true){
+        isLogin = false;
+    }else if(isLogin === false){
+        isLogin = true;
+    }
+    // isLogin = false;
+}
