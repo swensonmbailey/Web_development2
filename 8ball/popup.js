@@ -13,7 +13,7 @@ export function toggleCreateAcc(){
     main.setLogin();
     console.log(main.getLogin());
     
-    if(main.isLogin){
+    if(main.getLogin()){
         document.getElementById("createAccDiv").style.display = "none";
         document.getElementById("loginH1").innerHTML = "8-Ball Login";
         document.getElementById("questionStart").innerHTML = "Don't have";
