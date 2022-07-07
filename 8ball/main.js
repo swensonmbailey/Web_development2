@@ -10,9 +10,8 @@ variables
 //if isLogin is true then it's the login popup, if false then it's createAcc
 let isLogin = true;
 
-//helped used to tell of the user is logged in
-let isLoggedin = false;
-
+//this is the user's account
+//user will be null until
 let user = null;
 
 //sets up event listeners

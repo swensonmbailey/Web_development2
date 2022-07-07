@@ -1,11 +1,13 @@
 
-class Question{
-    constructor(){
-
+export default class Question{
+    constructor(q, a){
+        this.question = q;
+        this.answer = a;
+        this.id = makeQuestionId();
     }
 }
 
-export function makeQuestionId(){
+function makeQuestionId(){
     const date = new Date();
     let id = "";
     id += date.getMonth();

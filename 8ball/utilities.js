@@ -2,26 +2,24 @@ import * as popup from "./popup.js";
 import * as main from "./main.js";
 import User, * as u from "./user.js";
 import * as ls from './ls.js';
+import Question from "./question.js";
+import { getAnswer } from "./answers.js";
 
 //called when ask button is pushed. 
 //If question element has a length then takes that question as call the function with the fetch what will retrieve the answer from the api
 //then when the answer is retrieved a question object will be created and added to the current user's questions array.
 export function addQuestion() {
    
-    let content = document.getElementById("todoContent").value;
+    let question = document.getElementById("question").value;
     
-    if (content.length) {
+    if (question.length) {
         //create the object
-        
-        const todo = new Todo(t.makeTaskId(), content);
+        getAnswer(question);
 
-        todos.push(todo);
-        setTodosList(todos);
        
-        displayCurrent();
     }
     
-    document.getElementById("todoContent").value = ""; //reset the input box
+    document.getElementById("question").value = ""; //reset the input box
 }
 
 
@@ -42,6 +40,12 @@ export function makeListeners(){
         console.log('createAcc click');  
         popup.toggleCreateAcc();
     }, false);
+
+    document.getElementById('ask').addEventListener('click', (e)=>{
+        e.preventDefault();
+        console.log('asking question');  
+        addQuestion();
+    }, false);
 }
 
 
@@ -53,5 +57,5 @@ export function login(){
     console.log(user);
     main.setUser(user);
     ls.updateUserStorage(user);
-    
+
 }
