@@ -1,7 +1,7 @@
 import * as popup from "./popup.js";
 import * as util from "./utilities.js";
 import * as ls from "./ls.js";
-
+import User, * as u from "./user.js";
 /*
 variables
 */
@@ -17,10 +17,10 @@ let user = null;
 //sets up event listeners
 document.body.addEventListener("load", ls.onLoad(), false);
 util.makeListeners();
-document.getElementById("loginButton").addEventListener('click', (e) =>{
-    e.preventDefault();
-    util.login();
-}, false);
+// document.getElementById("loginButton").addEventListener('click', (e) =>{
+//     e.preventDefault();
+//     util.login();
+// }, false);
 
 export function getLogin() {
     return isLogin;
@@ -35,7 +35,9 @@ export function setLogin() {
 }
 export function setUser(data){
     user = data;
+    console.log(user);
 }
 export function getUser(){
+    console.log();
     return user;
 }

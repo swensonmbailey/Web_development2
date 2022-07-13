@@ -236,4 +236,9 @@ input {
   color: #838ecd;
 }
 
+.invalid {
+  color: #4e3429;
+  font-weight: bolder;
+}
+
 /*# sourceMappingURL=styles.css.map */
