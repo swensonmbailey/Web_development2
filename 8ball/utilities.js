@@ -4,7 +4,7 @@ import User, * as u from "./user.js";
 import * as ls from './ls.js';
 import Question from "./question.js";
 import { getAnswer } from "./answers.js";
-import { validation } from "./validation.js";
+import { validation, validateCreateAcc, validateLogIn } from "./validation.js";
 
 //called when ask button is pushed. 
 //If question element has a length then takes that question as call the function with the fetch what will retrieve the answer from the api
@@ -66,7 +66,7 @@ export function makeListeners() {
 
     document.getElementById("loginButton").addEventListener('click', (e) =>{
         e.preventDefault();
-        login();
+        validateLogIn();
     }, false);
 }
 
@@ -94,7 +94,9 @@ export function login() {
     // console.log(user);
     // main.setUser(user);
     // ls.updateUserStorage(user);
-    validation();
+
+    // if(main.getLogin === true){validateLogIn()}
+    // if(main.getLogin === false){validateCreateAcc()}
 
     
 }

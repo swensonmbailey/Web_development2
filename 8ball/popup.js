@@ -1,4 +1,5 @@
 import * as main from './main.js';
+import { validateCreateAcc, validateLogIn, displayMessage} from './validation.js';
 
 export function loginClick(){
     console.log("function");
@@ -18,15 +19,35 @@ export function toggleCreateAcc(){
         document.getElementById("loginH1").innerHTML = "8-Ball Login";
         document.getElementById("questionStart").innerHTML = "Don't have";
         document.getElementById("createAcc").innerHTML = "Create one";
+        document.getElementById("loginButton").innerHTML = "Login";
+        document.getElementById("loginButton").addEventListener('click', (e) =>{
+            e.preventDefault();
+            validateLogIn();
+        }, false);
+        clearSpan();
     }else{
         console.log(main.getLogin());
         document.getElementById("createAccDiv").style.display = "block";
         document.getElementById("loginH1").innerHTML = "8-Ball Create Account";
         document.getElementById("questionStart").innerHTML = "Have";
         document.getElementById("createAcc").innerHTML = "Sign in";
+        document.getElementById("loginButton").innerHTML = "Create Account";
+        document.getElementById("loginButton").addEventListener('click', (e) =>{
+            e.preventDefault();
+            validateCreateAcc();
+        }, false);
+        clearSpan();
     }
 }
 export function exitPopup(){
     document.getElementById("loginContents").style.display = "none";
     document.getElementById("pageContents").style.display = "flex";
+}
+
+function clearSpan(){
+    displayMessage(document.getElementById("username"), "");
+    displayMessage(document.getElementById("password"), "");
+    displayMessage(document.getElementById("confirm"), "");
+    displayMessage(document.getElementById("loginButton"), "");
+    
 }
