@@ -6,12 +6,4 @@ export default class User{
         this.questions = q;
     }
 
-    // getQuestions(){
-    //     return this.questions;
-    // }
-
-    // addQ(q){
-    //     this.question.push(q);
-    // }
-
 }

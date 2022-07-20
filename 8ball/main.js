@@ -1,10 +1,8 @@
-import * as popup from "./popup.js";
+
 import * as util from "./utilities.js";
 import * as ls from "./ls.js";
-import User, * as u from "./user.js";
-/*
-variables
-*/
+
+
 
 //will help know what popup window is to be displayed
 //if isLogin is true then it's the login popup, if false then it's createAcc
@@ -17,10 +15,6 @@ let user = null;
 //sets up event listeners
 document.body.addEventListener("load", ls.onLoad(), false);
 util.makeListeners();
-// document.getElementById("loginButton").addEventListener('click', (e) =>{
-//     e.preventDefault();
-//     util.login();
-// }, false);
 
 export function getLogin() {
     return isLogin;

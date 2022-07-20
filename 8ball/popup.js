@@ -15,31 +15,8 @@ export function toggleCreateAcc(){
     console.log(main.getLogin());
     
     if(main.getLogin()){
-        // document.getElementById("createAccDiv").style.display = "none";
-        // document.getElementById("loginH1").innerHTML = "8-Ball Login";
-        // document.getElementById("questionStart").innerHTML = "Don't have";
-        // document.getElementById("createAcc").innerHTML = "Create one";
-        // document.getElementById("loginButton").innerHTML = "Login";
-        // document.getElementById("loginButton").addEventListener('click', (e) =>{
-        //     e.preventDefault();
-        //     validateLogIn();
-        // }, false);
-        // clearSpan();
-        // clearInputs();
         showLogin();
     }else{
-        // console.log(main.getLogin());
-        // document.getElementById("createAccDiv").style.display = "block";
-        // document.getElementById("loginH1").innerHTML = "8-Ball Create Account";
-        // document.getElementById("questionStart").innerHTML = "Have";
-        // document.getElementById("createAcc").innerHTML = "Sign in";
-        // document.getElementById("loginButton").innerHTML = "Create Account";
-        // document.getElementById("loginButton").addEventListener('click', (e) =>{
-        //     e.preventDefault();
-        //     validateCreateAcc();
-        // }, false);
-        // clearSpan();
-        // clearInputs();
         showCreateAcc();
     }
 }

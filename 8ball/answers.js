@@ -11,23 +11,17 @@ export function getAnswer(question){
     fetch(url)
     .then(response => response.json())
     .then(magic => {
-        console.log(magic);
-        // let div = document.getElementById("answer");
-        // div.innerHTML = magic.magic.answer;
-        // div.style.fontSize = "15px";
-        // div.style.textAlign = "center";
-        // div.style.overflow = "hidden";
         util.messageInBall(magic.magic.answer);
         
         
         //create 
         let user = main.getUser();
-        console.log(user);
+        
         let q = new Question(question, magic.magic.answer);
         user.questions.push(q);
         main.setUser(user);
         ls.updateUserStorage(user);
-        console.log(main.getUser())
+        
 
 
         //update the viewQuestions container

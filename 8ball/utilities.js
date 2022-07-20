@@ -1,8 +1,6 @@
 import * as popup from "./popup.js";
 import * as main from "./main.js";
-import User, * as u from "./user.js";
 import * as ls from './ls.js';
-import Question from "./question.js";
 import { getAnswer } from "./answers.js";
 import { validation, validateCreateAcc, validateLogIn } from "./validation.js";
 import * as viewQ from "./viewQuestions.js";
@@ -17,17 +15,6 @@ export function addQuestion() {
     if (question.length) {
         //create the object
         getAnswer(question);
-        // let user = main.getUser();
-        // let q = new Question(question, ans);
-        // console.log(user);
-        // user.questions.push(q);
-        // main.setUser(user);
-        // ls.updateUserStorage(user);
-
-        //update the 8-ball
-        // let div = document.getElementById("answer");
-        // div.innerHTML = ans;
-        // div.style.fontSize = "20px";
 
     }else{
         messageInBall("Must type a question");
@@ -48,6 +35,7 @@ export function makeListeners() {
         if (main.getUser()) {
             ls.removeLoginData();
             viewQ.updateQuestionContainer();
+            resetBall();
             console.log("logged out");
         } else {
             popup.loginClick();
@@ -74,11 +62,6 @@ export function makeListeners() {
             console.log('asking question');
             addQuestion();
         } else {
-            // let div = document.getElementById("answer");
-            // div.innerHTML = "Log in to ask a question";
-            // div.style.fontSize = "15px";
-            // div.style.textAlign = "center";
-            // div.style.overflow = "hidden";
             messageInBall("Log in to ask a question");
         }
 
@@ -87,7 +70,6 @@ export function makeListeners() {
 
     document.getElementById("loginButton").addEventListener('click', (e) => {
         e.preventDefault();
-        // validateLogIn();
         validation();
     }, false);
 
@@ -115,21 +97,6 @@ function animateBall(set = 0) {
 
 }
 
-
-export function login() {
-    // let username = document.getElementById("username").value;
-    // let pass = document.getElementById("password").value;
-
-    // let user = new User(username, pass);
-    // console.log(user);
-    // main.setUser(user);
-    // ls.updateUserStorage(user);
-
-    // if(main.getLogin === true){validateLogIn()}
-    // if(main.getLogin === false){validateCreateAcc()}
-
-
-}
 
 export function resetBall() {
     let div = document.getElementById("answer");
