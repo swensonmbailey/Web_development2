@@ -1,5 +1,6 @@
 import * as main from './main.js';
 import { validateCreateAcc, validateLogIn, displayMessage} from './validation.js';
+import * as util from "./utilities.js";
 
 export function loginClick(){
     console.log("function");
@@ -52,6 +53,7 @@ function showCreateAcc(){
 
 
 export function exitPopup(){
+    util.animateBall(3);
     clearInputs();
     clearSpan();
     document.getElementById("loginContents").style.display = "none";

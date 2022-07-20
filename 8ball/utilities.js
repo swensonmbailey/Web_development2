@@ -44,7 +44,6 @@ export function makeListeners() {
     }, false);
 
     document.getElementById('back').addEventListener('click', (e) => {
-        animateBall(3);
         popup.exitPopup();
         resetBall();
         document.getElementById('question').value = "";
@@ -83,7 +82,7 @@ export function makeListeners() {
     }, false);
 }
 
-function animateBall(set = 0) {
+export function animateBall(set = 0) {
     let r = document.documentElement;
     let rs = getComputedStyle(r);
 
