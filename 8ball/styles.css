@@ -182,20 +182,20 @@ input {
   outline: none;
   font-family: "Joan";
 }
-@media screen and (min-width: 500px) {
-  #pageContents form div {
-    font-size: 2rem;
-  }
-  #pageContents form div #question {
-    font-size: 2rem;
-  }
-}
 @media screen and (min-width: 700px) {
   #pageContents form div {
-    font-size: 3rem;
+    font-size: 1rem;
   }
   #pageContents form div #question {
-    font-size: 3rem;
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 900px) {
+  #pageContents form div {
+    font-size: 2rem;
+  }
+  #pageContents form div #question {
+    font-size: 2rem;
   }
 }
 #pageContents form #ask {
@@ -239,6 +239,10 @@ input {
 .invalid {
   color: red;
   font-weight: bolder;
+}
+
+#quesitonContainer {
+  display: none;
 }
 
 .questionDiv {

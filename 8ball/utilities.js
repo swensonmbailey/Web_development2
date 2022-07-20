@@ -5,6 +5,7 @@ import * as ls from './ls.js';
 import Question from "./question.js";
 import { getAnswer } from "./answers.js";
 import { validation, validateCreateAcc, validateLogIn } from "./validation.js";
+import * as viewQ from "./viewQuestions.js";
 
 //called when ask button is pushed. 
 //If question element has a length then takes that question as call the function with the fetch what will retrieve the answer from the api
@@ -28,6 +29,8 @@ export function addQuestion() {
         // div.innerHTML = ans;
         // div.style.fontSize = "20px";
 
+    }else{
+        messageInBall("Must type a question");
     }
 
     document.getElementById("question").value = ""; //reset the input box
@@ -42,12 +45,20 @@ export function getQuestion() {
 export function makeListeners() {
     document.getElementById('login').addEventListener('click', (e) => {
         console.log("event");
-        popup.loginClick();
+        if (main.getUser()) {
+            ls.removeLoginData();
+            viewQ.updateQuestionContainer();
+            console.log("logged out");
+        } else {
+            popup.loginClick();
+        }
+
     }, false);
 
     document.getElementById('back').addEventListener('click', (e) => {
         animateBall(3);
         popup.exitPopup();
+        resetBall();
     }, false);
 
     document.getElementById('createAcc').addEventListener('click', (e) => {
@@ -59,21 +70,34 @@ export function makeListeners() {
         e.preventDefault();
         let r = document.documentElement;
         animateBall();
-        console.log('asking question');
-        addQuestion();
+        if (main.getUser()) {
+            console.log('asking question');
+            addQuestion();
+        } else {
+            // let div = document.getElementById("answer");
+            // div.innerHTML = "Log in to ask a question";
+            // div.style.fontSize = "15px";
+            // div.style.textAlign = "center";
+            // div.style.overflow = "hidden";
+            messageInBall("Log in to ask a question");
+        }
+
 
     }, false);
 
-    document.getElementById("loginButton").addEventListener('click', (e) =>{
+    document.getElementById("loginButton").addEventListener('click', (e) => {
         e.preventDefault();
-        validateLogIn();
+        // validateLogIn();
+        validation();
     }, false);
 
-    document.getElementById("question").addEventListener("focus", ()=>{
-        let div = document.getElementById("answer");
-        div.innerHTML = "8";
-        div.style.fontSize = "5rem";
+    document.getElementById("question").addEventListener("focus", () => {
+        resetBall();
     })
+
+    document.getElementById("changeView").addEventListener('click', (e) => {
+        viewQ.toggleQuestionContainer();
+    }, false);
 }
 
 function animateBall(set = 0) {
@@ -84,7 +108,7 @@ function animateBall(set = 0) {
         let animationNum = parseInt(rs.getPropertyValue("--repetition"));
         r.style.setProperty('--repetition', (animationNum + 3));
         console.log(rs.getPropertyValue("--repetition"));
-    }else{
+    } else {
         r.style.setProperty('--repetition', set);
     }
 
@@ -104,5 +128,18 @@ export function login() {
     // if(main.getLogin === true){validateLogIn()}
     // if(main.getLogin === false){validateCreateAcc()}
 
-    
+
+}
+
+export function resetBall() {
+    let div = document.getElementById("answer");
+    div.innerHTML = "8";
+    div.style.fontSize = "5rem";
+}
+export function messageInBall(message) {
+    let div = document.getElementById("answer");
+    div.innerHTML = message;
+    div.style.fontSize = "15px";
+    div.style.textAlign = "center";
+    div.style.overflow = "hidden";
 }

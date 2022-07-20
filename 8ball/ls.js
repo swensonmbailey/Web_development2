@@ -3,6 +3,7 @@ import * as viewQ from "./viewQuestions.js";
 
 export function onLoad() {
     // localStorage.clear();
+    console.log(localStorage);
     if (localStorage.getItem("username")) {
         console.log('loggedin');
         // let key = getLocalStorageKey(localStorage.getItem("username"), localStorage.getItem("password"));
@@ -11,6 +12,7 @@ export function onLoad() {
         // main.setUser(JSON.parse(userData));
         getUserData(localStorage.getItem("username"), localStorage.getItem("password"));
         viewQ.updateQuestionContainer();
+        document.getElementById("login").innerHTML = "Log Out";
     } else {
         console.log("not logged in")
     }
@@ -28,6 +30,7 @@ export function getUserData(user, pass) {
     if(userData){
         console.log(userData);
         main.setUser(JSON.parse(userData));
+        setLoginData(user, pass);
         return true;
     }else{
         return false;
@@ -43,5 +46,14 @@ export function setLoginData(user, pass) {
 }
 
 function getLocalStorageKey(user, pass) {
-    return JSON.stringify({ user, pass });
+    let newKey = user + pass;
+    console.log("getLocalStorageKey newKey: " + newKey);
+    return newKey;
+}
+
+export function removeLoginData(){
+    localStorage.removeItem("username");
+    localStorage.removeItem("password");
+    main.setUser(null);
+    document.getElementById("login").innerHTML = "Log In";
 }
