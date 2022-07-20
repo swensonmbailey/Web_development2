@@ -1,4 +1,5 @@
 import * as main from "./main.js";
+import * as viewQ from "./viewQuestions.js";
 
 export function onLoad() {
     // localStorage.clear();
@@ -9,6 +10,7 @@ export function onLoad() {
         // console.log(userData);
         // main.setUser(JSON.parse(userData));
         getUserData(localStorage.getItem("username"), localStorage.getItem("password"));
+        viewQ.updateQuestionContainer();
     } else {
         console.log("not logged in")
     }

@@ -237,8 +237,37 @@ input {
 }
 
 .invalid {
-  color: #4e3429;
+  color: red;
   font-weight: bolder;
+}
+
+.questionDiv {
+  border: 2px solid #d9d6ff;
+  display: grid;
+  grid-template-columns: 3fr 0.5fr;
+}
+.questionDiv .questionP {
+  font-family: "Joan";
+  color: #4e3429;
+  grid-row: 1/span 1;
+  grid-column: 1/span 1;
+  margin-bottom: -10px;
+}
+.questionDiv .AnswerP {
+  font-family: "Raleway";
+  color: #110f0f;
+  grid-row: 2/span 1;
+  grid-column: 2/span 1;
+  margin-top: -2px;
+}
+.questionDiv .x {
+  font-family: "Kdam Thmor Pro";
+  font-size: larger;
+  color: #838ecd;
+  grid-row: 1/span 2;
+  grid-column: 2/span 1;
+  cursor: pointer;
+  align-self: center;
 }
 
 /*# sourceMappingURL=styles.css.map */

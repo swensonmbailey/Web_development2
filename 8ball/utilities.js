@@ -68,6 +68,12 @@ export function makeListeners() {
         e.preventDefault();
         validateLogIn();
     }, false);
+
+    document.getElementById("question").addEventListener("focus", ()=>{
+        let div = document.getElementById("answer");
+        div.innerHTML = "8";
+        div.style.fontSize = "5rem";
+    })
 }
 
 function animateBall(set = 0) {

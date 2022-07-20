@@ -41,3 +41,6 @@ export function getUser(){
     console.log();
     return user;
 }
+export function setUserQuestions(questionsList){
+    user.questions = questionsList;
+}
