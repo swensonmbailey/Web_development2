@@ -38,6 +38,10 @@ const links = [
     {
       label: "Week10",
       url: "week10/index.html"
+    },
+    {
+      label: "Magic 8-Ball",
+      url: "8ball/index.html"
     }
 
   ]
