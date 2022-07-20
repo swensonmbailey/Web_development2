@@ -47,6 +47,7 @@ export function makeListeners() {
         animateBall(3);
         popup.exitPopup();
         resetBall();
+        document.getElementById('question').value = "";
     }, false);
 
     document.getElementById('createAcc').addEventListener('click', (e) => {

@@ -6,11 +6,14 @@ import * as viewQ from "./viewQuestions.js";
 import * as util from "./utilities.js";
 
 export function validation() {
-    
-    if (main.getLogin) {
+    console.log("in validation");
+    console.log(main.getLogin());
+    if (main.getLogin()) {
+        console.log("calling validateLogIn");
         validateLogIn();
        
     }else{
+        console.log("calling validateCreateAcc");
         validateCreateAcc();
         
     }
